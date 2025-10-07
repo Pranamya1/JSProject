@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Reaction Test</title>
+
+    <!-- linking index.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- linking reaction-tesst.css -->
+    <link rel="stylesheet" href="../css/reaction-test.css">
+</head>
+
+<body>
+    <!-- reaction test main container -->
+    <div class="test-main_container">
+
+        <!-- sidebar -->
+        <div class="sidebar">
+            <!-- title -->
+            <div class="side-title">
+                <img src="../assets/joystick.png" alt="">
+                JS Mini Arcade
+            </div>
+            <!-- btn container -->
+            <div class="btn-container">
+                <!-- buttons to go on pages -->
+                <a href="../../index.html" class="sidebar_btn">
+                    <!-- game/page icon -->
+                    <div class="btn-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-house-icon lucide-house">
+                            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                            <path
+                                d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        </svg>
+                    </div>
+                    Home
+                </a>
+                <a href="./src/pages/reaction.html" class="sidebar_btn"
+                    style="font-size: 20px; background-color: #009dff;">
+                    <!-- game/page icon -->
+                    <div class="btn-icon-container">
+                        <img src="../assets/f1-logo.png" alt="" height="80%">
+                    </div>
+                    Reaction Test
+                </a>
+                <a href="" class="sidebar_btn">
+                    <!-- game/page icon -->
+                    <div class="btn-icon-container">
+                        <img src="../assets/card-icon.png" alt="" height="100%">
+                    </div>
+                    Card Flip
+                </a>
+                <a href="" class="sidebar_btn" style="font-size: 14px;">
+                    <!-- game/page icon -->
+                    <div class="btn-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-scissors-icon lucide-scissors">
+                            <circle cx="6" cy="6" r="3" />
+                            <path d="M8.12 8.12 12 12" />
+                            <path d="M20 4 8.12 15.88" />
+                            <circle cx="6" cy="18" r="3" />
+                            <path d="M14.8 14.8 20 20" />
+                        </svg>
+                    </div>
+                    Rock Paper Scissors
+                </a>
+                <a href="" class="sidebar_btn" style="font-size: 20px;">
+                    <!-- game/page icon -->
+                    <div class="btn-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-message-circle-question-mark-icon lucide-message-circle-question-mark">
+                            <path
+                                d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                            <path d="M12 17h.01" />
+                        </svg>
+                    </div>
+                    Guess Number
+                </a>
+            </div>
+        </div>
+
+        <!-- sliding sidebar (small scr) -->
+        <div class="sidebar-sml">
+            <!-- svg for menu -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-menu-icon lucide-menu">
+                <path d="M4 5h16" />
+                <path d="M4 12h16" />
+                <path d="M4 19h16" />
+            </svg>
+        </div>
+
+        <!-- f1 test content side -->
+        <div class="f1-content-side">
+
+            <!-- topbar -->
+            <div class="test-topbar">
+                <!-- reaction test title -->
+                <div class="reaction_test-title">
+                    <p>F1 Reaction Test</p>
+                </div>
+                <!-- best score -->
+                <div class="best-score" id="best-score">Best Score: 0 ms</div>
+            </div>
+
+            <!-- reaction test -->
+            <div class="reaction-test-container" id="reaction-test-container">
+                <!-- instructions -->
+                <div class="test-instructions">
+                    <p>
+                        Click the "Start Test" button to begin. When "Red" light turn "Green", click as quickly as
+                        possible to measure your reaction time. Try to beat your best score!
+                    </p>
+                </div>
+
+                <!-- start btn container -->
+                 <div class="test-start_btn-container">
+                    <!-- start btn -->
+                     <button onclick="startReactionTest()">Start Test</button>
+                 </div>
+
+                 <!-- show light area -->
+                  <div class="show_light_area">
+                    <!-- lights -->
+                     <div class="lights"></div>
+                     <div class="lights"></div>
+                     <div class="lights"></div>
+                     <div class="lights"></div>
+                     <div class="lights"></div>
+                  </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- linking index.js for sidebar -->
+    <script src="../js/index.js"></script>
+    <!-- linking reaction-test.js for reaction test -->
+     <script src="../js/f1-reaction-test.js"></script>
+</body>
+
+</html>
