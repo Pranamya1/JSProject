@@ -4,26 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Mini Arcade Game Dashboard</title>
+    <title>F1 Reaction Test</title>
 
-    <!-- linking css -->
-    <link rel="stylesheet" href="./src/css/index.css">
+    <!-- linking index.css -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- linking reaction-tesst.css -->
+    <link rel="stylesheet" href="../css/reaction-test.css">
 </head>
 
 <body>
-    <!-- dashboard main container -->
-    <div class="dash-main_container">
-        <!-- dashboard sidebar (big scr) -->
+    <!-- reaction test main container -->
+    <div class="test-main_container">
+
+        <!-- sidebar -->
         <div class="sidebar">
             <!-- title -->
             <div class="side-title">
-                <img src="./src/assets/joystick.png" alt="">
+                <img src="../assets/joystick.png" alt="">
                 JS Mini Arcade
             </div>
             <!-- btn container -->
             <div class="btn-container">
                 <!-- buttons to go on pages -->
-                <a href="" class="sidebar_btn" style="background-color: #009dff;">
+                <a href="../../index.html" class="sidebar_btn">
                     <!-- game/page icon -->
                     <div class="btn-icon-container">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
@@ -36,17 +39,18 @@
                     </div>
                     Home
                 </a>
-                <a href="./src/pages/reaction.html" class="sidebar_btn" style="font-size: 20px;">
+                <a href="./src/pages/reaction.html" class="sidebar_btn"
+                    style="font-size: 20px; background-color: #009dff;">
                     <!-- game/page icon -->
                     <div class="btn-icon-container">
-                        <img src="./src/assets/f1-logo.png" alt="" height="80%">
+                        <img src="../assets/f1-logo.png" alt="" height="80%">
                     </div>
                     Reaction Test
                 </a>
                 <a href="" class="sidebar_btn">
                     <!-- game/page icon -->
                     <div class="btn-icon-container">
-                        <img src="./src/assets/card-icon.png" alt="" height="100%">
+                        <img src="../assets/card-icon.png" alt="" height="100%">
                     </div>
                     Card Flip
                 </a>
@@ -94,30 +98,53 @@
             </svg>
         </div>
 
-        <!-- right side container (content container) -->
-        <div class="dash-content_container">
-            <div class="site-logo">
-                <img src="./src/assets/joystick.png" alt="">
-            </div>
-            <div class="dash-quote">
-                <p>Select a game from the sidebar to start playing and challenge  yourself with classic arcade games!</p>
-            </div>
-            <!-- instructions container -->
-            <div class="dash-instruction-container">
-                <div class="instruction-panel">
-                    <div class="instruction-title">How To Play</div>
-                    <div class="instructions">
-                        <p>• Choose any game from the sidebar on the left</p> 
-                        <p>• Follow the on-screen controls for each game</p> 
-                        <p>• Try to beat your high score!</p> 
-                    </div>
+        <!-- f1 test content side -->
+        <div class="f1-content-side">
+
+            <!-- topbar -->
+            <div class="test-topbar">
+                <!-- reaction test title -->
+                <div class="reaction_test-title">
+                    <p>F1 Reaction Test</p>
                 </div>
+                <!-- best score -->
+                <div class="best-score" id="best-score">Best Score: 0 ms</div>
             </div>
+
+            <!-- reaction test -->
+            <div class="reaction-test-container" id="reaction-test-container">
+                <!-- instructions -->
+                <div class="test-instructions">
+                    <p>
+                        Click the "Start Test" button to begin. When "Red" light turn "Green", click as quickly as
+                        possible to measure your reaction time. Try to beat your best score!
+                    </p>
+                </div>
+
+                <!-- start btn container -->
+                 <div class="test-start_btn-container">
+                    <!-- start btn -->
+                     <button onclick="startReactionTest()">Start Test</button>
+                 </div>
+
+                 <!-- show light area -->
+                  <div class="show_light_area">
+                    <!-- lights -->
+                     <div class="lights"></div>
+                     <div class="lights"></div>
+                     <div class="lights"></div>
+                     <div class="lights"></div>
+                     <div class="lights"></div>
+                  </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- linking js file -->
-    <script src="./src/js/index.js"></script>
+    <!-- linking index.js for sidebar -->
+    <script src="../js/index.js"></script>
+    <!-- linking reaction-test.js for reaction test -->
+     <script src="../js/f1-reaction-test.js"></script>
 </body>
 
 </html>
