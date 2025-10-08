@@ -1,93 +1,169 @@
+// best score (null b'coz if null = 0 the best score will always be zero)
 let bestScore = null;
 
+// function to start game (change screen) after user starts playing
 function startReactionTest() {
+  // div where screen changes
   const reactionTestContainer = document.getElementById(
     "reaction-test-container"
   );
+  // changing screen
   reactionTestContainer.innerHTML = `
-        <div class="test-instructions" style="height: 20%;">
-            <p>Wait for the lights to turn green, then click as fast as you can!</p>
+    <div class="test-instructions" style="height: 20%;">
+        <p>Wait for the lights to turn green, then click as fast as you can!</p>
+    </div>
+    <div class="test-area-container" id="test-area-container">
+        <div class="test-area" id="test-area">
+            <div class="lights" id="light"></div>
+            <div class="lights" id="light"></div>
+            <div class="lights" id="light"></div>
+            <div class="lights" id="light"></div>
+            <div class="lights" id="light"></div>
         </div>
-        <div class="test-area-container" id="test-area-container">
-            <div class="test-area" id="test-area">
-                <div class="lights" id="light"></div>
-                <div class="lights" id="light"></div>
-                <div class="lights" id="light"></div>
-                <div class="lights" id="light"></div>
-                <div class="lights" id="light"></div>
-            </div>
-            <div class="currant-score" id="current-score">Current Score: 0 ms</div>
-        </div>
-        <div class="try-again" id="try-again">
-            <button onclick="randomDelay()">Try Again</button>
-        </div>
-    `;
-  randomDelay();
+        <div class="currant-score" id="current-score">Current Score: 0 ms</div>
+    </div>
+    <div class="try-again" id="try-again">
+        <button onclick="startReactionTest()" style="margin-right: 10%;">Try Again</button>
+        <button onclick="stopPlaying()" style="margin-left: 10%; ">Back</button>
+    </div>
+   `;
+  //  start the game after changing the screen
+  startingTest();
 }
 
-function randomDelay() {
+// function to start test
+function startingTest() {
+  // ramdom timeings
   const delay = [
     720, 1040, 1180, 1290, 1460, 1630, 1750, 1880, 2030, 2170, 2290, 2440, 2580,
     2690, 2770, 2830, 2890, 2930, 2970, 3000,
   ];
 
+  // random function generates a random number from 0 - 19 which acts as the index number for delay array and
+  // chooses the time to turn lights green after all lights are red
   let randomTime = delay[Math.floor(Math.random() * delay.length)];
+
+  // selecting all 5 lights via .lights class to change querry selector liberary function
   const lights = document.querySelectorAll(".lights");
-  console.log(randomTime);
-  // Turn lights red one by one
-  for (let i = 0; i < lights.length; i++) {
-    setTimeout(() => {
+
+  // turning lights red one by one using set time out lib function
+  // delaying the turning red of first light by .7 sec
+  setTimeout(() => {
+    for (let i = 0; i < lights.length; i++) {
       setTimeout(() => {
         lights[i].style.backgroundColor = "red";
       }, 1000 * i);
-    }, 1000);
+    }
+  }, 700);
+
+  // detecting if user clicks b4 turning all lights to green
+  // activating and deactivating addeventlistener to detect jump start
+  for (let i = 0; i < lights.length; i++) {
+    setTimeout(() => {
+      function earlyClick() {
+        // if jump start direct towards the jump start screen
+        jumpStartScr();
+      }
+
+      // activateing eventlistener
+      document.addEventListener("click", earlyClick);
+
+      // to detect the jump start after all lights went red
+      const removeDelay = (i === lights.length - 1) ? randomTime : 1000;
+
+      // deactivate listener after removeDelay
+      setTimeout(() => {
+        document.removeEventListener("click", earlyClick);
+      }, removeDelay);
+    }, 1000 * i);
   }
 
-  //   if user clicked before green
-  setTimeout(() => {
-    document.addEventListener("click", function earlyClick() {
-      const reactionTestContainer = document.getElementById(
-        "reaction-test-container"
-      );
-      reactionTestContainer.innerHTML = `
-        <div class="clicked-early">
-            <p>Jump Start :(</p>
-            <button onclick="startReactionTest()">Start Test</button>
-        </div>`;
-    });
-  }, 1000);
-  //   Record start time
+  // stating to record time to measure score in ms
   let reactionStartTime;
 
-  // After all lights are red, after delay turn green
-  // calculating reaction time
+  // calculating reaction time && turning lights green
   setTimeout(() => {
+
+    // turning all lights green at once
+
     lights.forEach((light) => (light.style.backgroundColor = "green"));
+
+    // using performance.now to record precise time in ms 
     reactionStartTime = performance.now();
 
     // detect click after green
     document.addEventListener("click", function handleClick() {
+
+      // ending reaction time after detecting a click after lights are green
       const reactionEndTime = performance.now();
+
+      // calculating the time 
       const reaction = Math.floor(reactionEndTime - reactionStartTime);
 
-      // Update current score
-      document.getElementById(
-        "current-score"
-      ).innerText = `Current Score: ${reaction} ms`;
+      // update current score after calculating the score
+      document.getElementById("current-score").innerText = `Current Score: ${reaction} ms`;
 
-      // Update best score
+      // if current score is less than previous best score is updated to current score or
+      // if user is playing for first time it will be null
       if (bestScore === null || reaction < bestScore) {
         bestScore = reaction;
-        document.getElementById(
-          "best-score"
-        ).innerText = `Best Score: ${bestScore} ms`;
+        document.getElementById("best-score").innerText = `Best Score: ${bestScore} ms`;
       }
 
+      // removing eventlistener
       document.removeEventListener("click", handleClick);
     });
   }, randomTime + 5000);
 }
 
-// setTimeout(() => {
-//   console.log("This runs after 1 second");
-// }, 3000); // 1000 ms = 1s
+// function for jump screen
+function jumpStartScr() {
+
+  // showing jumpstart screen on reaction-test-container
+  const reactionTestContainer = document.getElementById(
+    "reaction-test-container"
+  );
+  reactionTestContainer.innerHTML = `
+        <div class="clicked-early">
+            <p>Jump Start :(</p>
+        </div>`;
+        // showes jump start screen for 1 sec and then restarts the game
+  setTimeout(() => {
+    // restarts
+    startReactionTest()
+  }, 1000)
+}
+
+// if user wants to stop playing
+function stopPlaying() {
+  const reactionTestContainer = document.getElementById(
+    "reaction-test-container"
+  );
+  reactionTestContainer.innerHTML = `
+       <div class="reaction-test-container" id="reaction-test-container">
+                <!-- instructions -->
+                <div class="test-instructions">
+                    <p>
+                        Click the "Start Test" button to begin. When "Red" light turn "Green", click as quickly as
+                        possible to measure your reaction time. Try to beat your best score!
+                    </p>
+                </div>
+
+                <!-- start btn container -->
+                <div class="test-start_btn-container">
+                    <!-- start btn -->
+                    <button onclick="startReactionTest()">Start Test</button>
+                </div>
+
+                <!-- show light area -->
+                <div class="show_light_area">
+                    <!-- lights -->
+                    <div class="lights"></div>
+                    <div class="lights"></div>
+                    <div class="lights"></div>
+                    <div class="lights"></div>
+                    <div class="lights"></div>
+                </div>
+            </div>
+    `;
+}

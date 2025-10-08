@@ -178,9 +178,9 @@ body {
     width: 100%;
     color: red;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
+    gap: 20%; 
     font-size: 2rem;       
 }
 
@@ -193,4 +193,5 @@ body {
     cursor: pointer;
     background-color: #009dff;
     color: white;
+    gap: 20%;
 }
