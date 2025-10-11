@@ -1,8 +1,7 @@
-    // sliding of sidebar in sml scr
-    const dash_sidebar_sml = document.querySelector('.sidebar-sml'); 
-    const sidebar = document.querySelector('.sidebar');
+// sliding of sidebar in sml scr
+const mobSidebarBtn = document.getElementById('mob_sidebar_slid-btn');
+const mobSidebar = document.querySelector('.mob-sidebar');
 
-    dash_sidebar_sml.addEventListener('click', () => {
-        sidebar.classList.toggle('active'); 
-    });
-
+mobSidebarBtn.addEventListener('click', () => {
+    mobSidebar.classList.toggle('active'); // toggle sidebar visibility
+});

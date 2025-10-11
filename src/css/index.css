@@ -1,14 +1,20 @@
-/* font styleing (Inter) */
-@import url('https://fonts.googleapis.com/css2?family=Delius&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* font styleing */
+/* Orbitron (for heading) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/* Rajdhani (for body text) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 * {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: "Delius", cursive;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
@@ -18,227 +24,141 @@ body {
     width: 100vw;
     min-height: 100vh;
     max-height: auto;
-    background-color: #0f0f1f;
+    background-color: #1a1a1a;
     display: flex;
 }
 
-/* dashboard sidebar (big scr) */
+/* sidebar */
 .sidebar {
-    height: 98.5vh;
-    width: 20vw;
-    background-color: #1C1824;
-    margin-top: 5px;
-    margin-left: 5px;
-    border-radius: 10px;
+    width: 8.2vw;
+    height: 100vh;
     position: fixed;
-    transition: transform 0.3s ease;
+    background-color: #121218;
+    border: 1px solid #23232b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+    padding-top: 3%;
+}
+
+.sidebar-btns {
+    height: 12%;
+    width: 65%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-btns:hover {
+    background-color: rgba(128, 128, 128, 0.164);
+}
+
+.sidebar-logo {
+    background: linear-gradient(135deg, #7A3FFF, #0DEBEB);
+    box-shadow: 0 0 30px #793fffa5;
+    transition: transform 0.2s ease-in-out;
+}
+
+.sidebar-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #7A3FFF;
+}
+
+.content-side {
+    height: 100vh;
+    width: 92.8%;
+    margin-left: 8.2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-side-bac-img {
+    height: 90%;
+    width: 95%;
+    background-color: black;
+    border-radius: 1rem;
+    background-image: url(../assets/home_img-bac.jpg);
+    background-size: 100% 100%;
     overflow: hidden;
 }
 
-/* dashboard sidebar (sml scr) */
-.sidebar-sml {
+.background-img-overlay {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, black, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+#mob_sidebar_slid-btn,
+.mob-sidebar {
     display: none;
 }
 
-/* title */
-.side-title {
-    height: 20%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    color: #009dff;
-    gap: 2%;
-}
-
-.side-title img {
-    height: 60%;
-    width: 30%;
-}
-
-/* sidebar btn container */
-.btn-container {
-    height: 70%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10%;
-}
-
-/* sidebar btns */
-.sidebar_btn {
-    height: 10%;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
-    gap: 3%;
-    font-size: 25px;
-}
-
-/* btn icon container */
-.btn-icon-container {
-    height: 100%;
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* right side container (content container) */
-.dash-content_container {
-    width: 78vw;
-    margin-left: 21vw;
-    display: flex;
-    flex-direction: column;
-}
-
-/* site logo */
-.site-logo {
-    height: 30%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.site-logo img {
-    height: 100%;
-}
-
-/* dashboard quote */
-.dash-quote {
-    height: 20%;
-    width: 100%;
-    color: aliceblue;
-    font-size: 1.5rem;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dash-quote p {
-    max-width: 70%;
-}
-
-/* bashboard instruction panel */
-.dash-instruction-container {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.instruction-panel {
-    height: 70%;
-    width: 50%;
-    border-radius: 15px;
-    border: 1px solid #009dff;
-    overflow: hidden;
-}
-
-.instruction-title {
-    height: 20%;
-    width: 100%;
-    background-color: #009dff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-}
-
-.instructions {
-    height: 80%;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
-    font-size: 1.1rem;
-}
-
-
-
 @media (max-width: 425px) {
-    body {
-        overflow-x: hidden;
+    .sidebar {
+        display: none;
     }
 
-    /* dashboard sidebar (sml scr) */
-    .sidebar-sml {
+    #mob_sidebar_slid-btn,
+    .mob-sidebar {
         display: flex;
-        height: 40px;
-        width: 40px;
-        background-color: black;
-        align-items: center;
-        justify-content: center;
+    }
+
+
+    .sidebar-btns {
+        height: 60px;
+        width: 60px;
         border-radius: 10px;
-        margin-left: 10px;
-        margin-top: 10px;
+        margin-top: 15px;
+        margin-left: 15px;
         position: fixed;
         z-index: 1001;
     }
 
-    .sidebar {
-        display: block;
-        width: 70vw;
-        transform: translateX(-100%);
-        z-index: 1000;
-    }
-
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    /* side title img */
-    .side-title img {
-        height: 60%;
-        width: 30%;
-    }
-
-    /* dashboard content side */
-    .dash-content_container {
-        width: 100%;
-        min-height: 100vh;
-        max-height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .content-side {
         margin-left: 0;
+        width: 100vw;
     }
 
-    .dash-quote {
-        font-size: 1.1rem;
-    }
-
-    .dash-quote p {
-        max-width: 80%;
-    }
-
-    .dash-instruction-container {
-        height: 80vh;
-        width: 100%;
-    }
-
-    .instruction-panel {
-        width: 80%;
+    /* initially hide the mobile sidebar off-screen */
+    .mob-sidebar {
+        height: 100vh;
+        width: 70%;
+        background-color: #121218;
+        position: fixed;
+        top: 0;
+        left: -70%;
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        padding-top: 30%;
     }
 
-    .instruction-panel p {
-        max-width: 80%;
-        text-align: center;
+    /* active class to show sidebar */
+    .mob-sidebar.active {
+        left: 0;
     }
+
+    .mob-sidebar-btns {
+        height: 13%;
+        width: 75%;
+        margin-left: 10%;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding-left: 5%;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        gap: 10%;
+        margin-bottom: 5%;
+    }
+
+    .mob-sidebar-btns:hover {
+    background-color: rgba(128, 128, 128, 0.164);
+}
 }
