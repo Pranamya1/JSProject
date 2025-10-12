@@ -49,10 +49,51 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .sidebar-btns:hover {
     background-color: rgba(128, 128, 128, 0.164);
+}
+
+.tooltip {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    left: 150%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    background-color: #121218;
+    color: white;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, left 0.3s ease;
+}
+
+/* show on hover */
+.sidebar-btns:hover .tooltip {
+    opacity: 1;
+    left: 140%;
+}
+
+/* small glowing arrow */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.85) transparent transparent;
 }
 
 .sidebar-logo {
@@ -90,6 +131,51 @@ body {
     height: 100%;
     width: 100%;
     background: linear-gradient(90deg, black, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.main-heading {
+    height: 100%;
+    width: 100%;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    color: white;
+}
+
+.main-heading h1 {
+    height: auto;
+    width: 60%;
+}
+
+.main-heading p {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 20px;
+    width: 70%;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-top: 10px;
+    color: #d1d1d1;
+}
+
+.main-heading span {
+    background: linear-gradient(135deg, #7A3FFF, #0DEBEB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-heading button {
+    height: 10%;
+    width: 15%;
+    background-color: #7A3FFF;
+    border-radius: 10px;
+    border: none;
+    margin-top: 8%;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 #mob_sidebar_slid-btn,
@@ -159,6 +245,6 @@ body {
     }
 
     .mob-sidebar-btns:hover {
-    background-color: rgba(128, 128, 128, 0.164);
-}
+        background-color: rgba(128, 128, 128, 0.164);
+    }
 }
