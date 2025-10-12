@@ -247,4 +247,32 @@ body {
     .mob-sidebar-btns:hover {
         background-color: rgba(128, 128, 128, 0.164);
     }
+
+    .content-side-bac-img {
+        background-image: url(../assets/home_img-bac-small.jpg);
+    }
+
+    .background-img-overlay {
+        padding-left: 5%;
+        padding-top: 5%;
+    }
+
+    .main-heading {
+        font-size: 25px;
+    }
+
+    .main-heading h1 {
+        height: auto;
+        width: 100%;
+    }
+
+    .main-heading p {
+        width: 100%;
+    }
+
+    .main-heading button {
+        width: 35%;
+        margin-top: 2%;
+    }
+
 }
