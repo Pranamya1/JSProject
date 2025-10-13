@@ -1,0 +1,182 @@
+/* font styleing */
+/* Orbitron (for heading) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/* Rajdhani (for body text) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* main container */
+.games-main-container {
+    width: 100vw;
+    min-height: 100vh;
+    max-height: auto;
+    background-color: #1a1a1a;
+    display: flex;
+    font-family: "Rajdhani", sans-serif;
+}
+
+/* game content side */
+.games-content {
+    height: 100vh;
+    width: 92.8%;
+    margin-left: 8.2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+}
+
+.games-heading {
+    height: 10vh;
+    width: 100%;
+    background-color: aliceblue;
+    padding-left: 5%;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-family: "Orbitron", sans-serif;
+}
+
+.games-card-container {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+}
+
+.games-card {
+    height: 100%;
+    width: 40%;
+    background-color: #121218;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid #23232b;
+}
+
+.card-img-container {
+    height: 100%;
+    width: 50%;
+    background-color: black;
+}
+
+.game-img-one {
+    background-image: url(../assets/f1.jpeg);
+    background-size: 100% 100%;
+}
+
+.game-img-two {
+    background-image: url(../assets/rps.jpeg);
+    background-size: 100% 100%;
+}
+
+.games-title {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding-left: 2%;
+}
+
+.games-title h1 {
+    font-size: 20px;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 250;
+}
+
+.games-title button {
+    height: 5vh;
+    width: 50%;
+    border-radius:8px;
+    border: none;
+    background-color: #7A3FFF;
+    margin-top: 60%;
+}
+
+/*
+=================================================================================================================
+=================================================================================================================
+Media for Mobile
+=================================================================================================================
+=================================================================================================================
+ */
+
+@media (max-width: 425px) {
+    .games-content {
+        width: 100vw;
+        margin-left: 0;
+    }
+
+    .games-heading {
+        padding-left: 20%;
+    }
+
+    .games-card-container {
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .games-card {
+        height: 40%;
+        width: 95%;
+    }
+
+    .games-title button {
+        margin-top: 30%;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .games-content {
+        width: 100vw;
+        margin-left: 0;
+    }
+
+    .games-heading {
+        padding-left: 12%;
+    }
+
+    .games-card-container {
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .games-card {
+        height: 45%;
+        width: 75%;
+    }
+
+    .games-title button {
+        margin-top: 30%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .games-content {
+        width: 100vw;
+        margin-left: 0;
+    }
+
+    .games-heading {
+        padding-left: 12%;
+    }
+
+    .games-card-container {
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .games-card {
+        height: 45%;
+        width: 75%;
+    }
+
+    .games-title button {
+        margin-top: 35%;
+    }
+}

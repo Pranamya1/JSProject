@@ -183,6 +183,14 @@ body {
     display: none;
 }
 
+/*
+=================================================================================================================
+=================================================================================================================
+Media for Mobile
+=================================================================================================================
+=================================================================================================================
+ */
+
 @media (max-width: 425px) {
     .sidebar {
         display: none;
@@ -274,5 +282,208 @@ body {
         width: 35%;
         margin-top: 2%;
     }
-
 }
+
+/*
+=================================================================================================================
+=================================================================================================================
+Media for Tablet
+=================================================================================================================
+=================================================================================================================
+ */
+
+ @media (min-width:426px) and (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    #mob_sidebar_slid-btn,
+    .mob-sidebar {
+        display: flex;
+    }
+
+
+    .sidebar-btns {
+        height: 60px;
+        width: 60px;
+        border-radius: 10px;
+        margin-top: 15px;
+        margin-left: 15px;
+        position: fixed;
+        z-index: 1001;
+    }
+
+    .content-side {
+        margin-left: 0;
+        width: 100vw;
+    }
+
+    /* initially hide the mobile sidebar off-screen */
+    .mob-sidebar {
+        height: 100vh;
+        width: 30%;
+        background-color: #121218;
+        position: fixed;
+        top: 0;
+        left: -70%;
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        padding-top: 15%;
+    }
+
+    /* active class to show sidebar */
+    .mob-sidebar.active {
+        left: 0;
+    }
+
+    .mob-sidebar-btns {
+        height: 13%;
+        width: 75%;
+        margin-left: 10%;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding-left: 5%;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        gap: 10%;
+        margin-bottom: 5%;
+    }
+
+    .mob-sidebar-btns:hover {
+        background-color: rgba(128, 128, 128, 0.164);
+    }
+
+    .content-side-bac-img {
+        background-image: url(../assets/home_img-bac-small.jpg);
+    }
+
+    .background-img-overlay {
+        padding-left: 5%;
+        padding-top: 5%;
+    }
+
+    .main-heading {
+        font-size: 25px;
+    }
+
+    .main-heading h1 {
+        height: auto;
+        width: 80%;
+    }
+
+    .main-heading p {
+        width: 85%;
+        margin-top: 8%;
+    }
+
+    .main-heading button {
+        width: 35%;
+        margin-top: 10%;
+    }
+}
+
+/*
+=================================================================================================================
+=================================================================================================================
+Media for small laptop
+=================================================================================================================
+=================================================================================================================
+ */
+
+ @media (min-width: 769px) and (max-width: 1024px) {
+    .sidebar {
+        display: none;
+    }
+
+    #mob_sidebar_slid-btn,
+    .mob-sidebar {
+        display: flex;
+    }
+
+
+    .sidebar-btns {
+        height: 60px;
+        width: 60px;
+        border-radius: 10px;
+        margin-top: 15px;
+        margin-left: 15px;
+        position: fixed;
+        z-index: 1001;
+    }
+
+    .content-side {
+        margin-left: 0;
+        width: 100vw;
+    }
+
+    /* initially hide the mobile sidebar off-screen */
+    .mob-sidebar {
+        height: 100vh;
+        width: 30%;
+        background-color: #121218;
+        position: fixed;
+        top: 0;
+        left: -70%;
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        padding-top: 15%;
+    }
+
+    /* active class to show sidebar */
+    .mob-sidebar.active {
+        left: 0;
+    }
+
+    .mob-sidebar-btns {
+        height: 13%;
+        width: 75%;
+        margin-left: 10%;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding-left: 5%;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        gap: 10%;
+        margin-bottom: 5%;
+    }
+
+    .mob-sidebar-btns:hover {
+        background-color: rgba(128, 128, 128, 0.164);
+    }
+
+    .content-side-bac-img {
+        background-image: url(../assets/home_img-bac-small.jpg);
+    }
+
+    .background-img-overlay {
+        padding-left: 5%;
+        padding-top: 5%;
+    }
+
+    .main-heading {
+        font-size: 25px;
+    }
+
+    .main-heading h1 {
+        height: auto;
+        width: 60%;
+    }
+
+    .main-heading p {
+        width: 70%;
+        margin-top: 5%;
+    }
+
+    .main-heading button {
+        width: 35%;
+        margin-top: 10%;
+    }
+ }
