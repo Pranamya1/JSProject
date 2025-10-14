@@ -74,6 +74,9 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-image: url(../assets/track.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* test instructions */
@@ -201,6 +204,73 @@ body {
     gap: 20%;
 }
 
+#light {
+    height: 15vh;
+    width: 8vw;
+    margin-top: 2%;
+    /* gap: -1%; */
+}
+
+.rb {
+    height: 120%;
+    width:100%;
+}
+
+.pole-screen {
+    background-image: url(../assets/track.png);
+    display: flex;
+    flex-direction: column;
+    background-color: #007bbf;
+}
+
+.pole-screen-overlay {
+    height: 89.1vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pole-title {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pole-screen-overlay h1 {
+    font-size: 50px;
+}
+
+.pole-btns {
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30%;
+}
+
+.pole-btns button {
+    height: 40%;
+    width: 10%;
+    background-color: #009dff;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.3rem;
+}
+
+/*
+=================================================================================================================
+=================================================================================================================
+Media for Mobile
+=================================================================================================================
+=================================================================================================================
+ */
+
 @media (max-width: 425px) {
     .f1-content-side {
         width: 100vw;
@@ -217,5 +287,143 @@ body {
 
     .reaction_test-title {
         margin-left: 10%;
+    }
+
+    .reaction-test-container {
+        background-image: url(../assets/track.png);
+    }
+
+    .test-instructions {
+        font-size: 14px;
+    }
+
+    .test-start_btn-container button {
+        height: 50%;
+        width: 25%;
+    }
+
+    .lights,
+    #light {
+        height: 29%;
+        width: 15%;
+    }
+
+    .currant-score {
+        font-size: 20px;
+    }
+
+    .pole-btns button {
+        height: 30%;
+        width: 30%;
+    }
+}
+
+/*
+=================================================================================================================
+=================================================================================================================
+Media for Tablet
+=================================================================================================================
+=================================================================================================================
+ */
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .f1-content-side {
+        width: 100vw;
+        margin-left: 0;
+        overflow-x: hidden;
+        padding: 5px;
+    }  
+
+    .test-topbar {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .reaction_test-title {
+        margin-left: 10%;
+    }
+
+    .reaction-test-container {
+        background-image: url(../assets/track.png);
+    }
+
+    .test-instructions {
+        font-size: 20px;
+    }
+
+    .test-start_btn-container button {
+        height: 50%;
+        width: 25%;
+    }
+
+    .lights,
+    #light {
+        height: 40%;
+        width: 15%;
+    }
+
+    .currant-score {
+        font-size: 20px;
+    }
+
+    .pole-btns button {
+        height: 35%;
+        width: 20%;
+    }
+}
+
+/*
+=================================================================================================================
+=================================================================================================================
+Media for small laptop
+=================================================================================================================
+=================================================================================================================
+ */
+
+@media (min-width: 789px) and (max-width: 1024px) {
+    .f1-content-side {
+        width: 100vw;
+        margin-left: 0;
+        overflow-x: hidden;
+        padding: 5px;
+    }  
+
+    .test-topbar {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .reaction_test-title {
+        margin-left: 10%;
+    }
+
+    .reaction-test-container {
+        background-image: url(../assets/track.png);
+    }
+
+    .test-instructions {
+        font-size: 20px;
+    }
+
+    .test-start_btn-container button {
+        height: 50%;
+        width: 25%;
+    }
+
+    .lights,
+    #light {
+        height: 40%;
+        width: 15%;
+    }
+
+    .currant-score {
+        font-size: 20px;
+    }
+
+    .pole-btns button {
+        height: 35%;
+        width: 20%;
     }
 }

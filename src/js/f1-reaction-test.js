@@ -22,13 +22,9 @@ function startReactionTest() {
         </div>
         <div class="currant-score" id="current-score">Current Score: 0 ms</div>
     </div>
-    <div class="try-again" id="try-again">
-        <button onclick="startReactionTest()" style="margin-right: 10%;">Try Again</button>
-        <button onclick="stopPlaying()" style="margin-left: 10%; ">Back</button>
-    </div>
    `;
   //  start the game after changing the screen
-  startingTest();
+  backmakerScreen();
 }
 
 // function to start test
@@ -110,6 +106,16 @@ function startingTest() {
         document.getElementById("best-score").innerText = `Best Score: ${bestScore} ms`;
       }
 
+      if (reaction <= 200) {
+        poleScreen(reaction)
+      }
+      else if (reaction <= 400) {
+        midFieldScreen(reaction)
+      }
+      else {
+        backmakerScreen(reaction)
+      }
+
       // removing eventlistener
       document.removeEventListener("click", handleClick);
     });
@@ -167,3 +173,65 @@ function stopPlaying() {
             </div>
     `;
 }
+
+function poleScreen(reaction) {
+  console.log("Pole position");
+    // div where screen changes
+  const reactionTestContainer = document.getElementById(
+    "reaction-test-container");
+
+    reactionTestContainer.innerHTML = `
+      <div class="pole-screen">
+        <div class="pole-screen-overlay">
+          <div class="pole-title"><h1>Pole Position</h1>
+            <p>Current score: ${reaction}</p><div>
+          </div>
+          <div class="pole-btns">
+            <button onclick="startReactionTest()">Play Again</button>
+            <button onclick="stopPlaying()">Back</button>
+          </div>
+        </div>
+      </div>
+    `
+}
+
+function midFieldScreen(reaction) {
+  // div where screen changes
+  const reactionTestContainer = document.getElementById(
+    "reaction-test-container");
+
+    reactionTestContainer.innerHTML = `
+      <div class="pole-screen">
+        <div class="pole-screen-overlay">
+          <div class="pole-title"><h1>Mid Field Runner</h1>
+            <p>Current score: ${reaction}</p><div>
+          </div>
+          <div class="pole-btns">
+            <button onclick="startReactionTest()">Play Again</button>
+            <button onclick="stopPlaying()">Back</button>
+          </div>
+        </div>
+      </div>
+    `
+}
+
+function backmakerScreen(reaction) {
+  // div where screen changes
+  const reactionTestContainer = document.getElementById(
+    "reaction-test-container");
+
+    reactionTestContainer.innerHTML = `
+      <div class="pole-screen">
+        <div class="pole-screen-overlay">
+          <div class="pole-title"><h1>Back Maker</h1>
+            <p>Current score: ${reaction}</p><div>
+          </div>
+          <div class="pole-btns">
+            <button onclick="startReactionTest()">Play Again</button>
+            <button onclick="stopPlaying()">Back</button>
+          </div>
+        </div>
+      </div>
+    `
+}
+ 

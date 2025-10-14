@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 Reaction Test</title>
+    <title>Rock Paper Scissor</title>
 
     <!-- linking index.css -->
     <link rel="stylesheet" href="../css/index.css">
-    <!-- linking reaction-tesst.css -->
-    <link rel="stylesheet" href="../css/reaction-test.css">
+    <!-- linking rps.css -->
+    <link rel="stylesheet" href="../css/rps.css">
 </head>
 
 <body>
-    <!-- reaction test main container -->
-    <div class="test-main_container">
+    <!-- main container-->
+    <div class="rps-main_container">
 
         <!-- desktop screen (big scr) -->
         <!-- sidebar -->
@@ -109,50 +109,42 @@
             </a>
         </div>
 
-        <!-- reaction test -->
-        <div class="f1-content-side">
-            <div class="test-topbar">
+        <!-- content side -->
+        <div class="rps-content-side">
+            <!-- topbar -->
+            <div class="rps-topbar">
                 <!-- reaction test title -->
-                <div class="reaction_test-title">
-                    <p>F1 Reaction Test</p>
+                <div class="rps-title">
+                    <p>Rock Paper Scissor</p>
                 </div>
-                <!-- best score -->
-                <div class="best-score" id="best-score">Best Score: 0 ms</div>
             </div>
 
-            <div class="reaction-test-container" id="reaction-test-container">
+            <div class="rps-container" id="rps-container">
                 <!-- instructions -->
-                <div class="test-instructions">
+                <div class="rps-instructions">
                     <p>
-                        Click the "Start Test" button to begin. When "Red" light turn "Green", click as quickly as
-                        possible to measure your reaction time. Try to beat your best score!
+                        Click start button and choose any one of "Rock", "Paper", "Scissor" in time.
                     </p>
                 </div>
-
-                <!-- start btn container -->
-                <div class="test-start_btn-container">
-                    <!-- start btn -->
-                    <button onclick="startReactionTest()">Start Test</button>
+                <div class="rps-show-box-container">
+                    <div class="rps-show-box">
+                        <div class="rps-show-box-title">You</div>
+                        <div class="rps-show-box-img"></div>
+                    </div>
+                    <h1>Vs</h1>
+                    <div class="rps-show-box">
+                        <div class="rps-show-box-title">Opponent</div>
+                        <div class="rps-show-box-img"></div>
+                    </div>
                 </div>
-
-                <!-- show light area -->
-                <div class="show_light_area">
-                    <!-- lights -->
-                    <div class="lights"></div>
-                    <div class="lights"></div>
-                    <div class="lights"></div>
-                    <div class="lights"></div>
-                    <div class="lights"></div>
+                <div class="rps-start-btn-container">
+                    <button onclick="startRps()">Start</button>
                 </div>
             </div>
         </div>
-
     </div>
-
-    <!-- linking index.js for sidebar -->
     <script src="../js/index.js"></script>
-    <!-- linking reaction-test.js for reaction test -->
-    <script src="../js/f1-reaction-test.js"></script>
+    <script src="../js/rps.js"></script>
 </body>
 
 </html>
