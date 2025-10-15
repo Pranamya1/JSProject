@@ -24,7 +24,7 @@ function startReactionTest() {
     </div>
    `;
   //  start the game after changing the screen
-  backmakerScreen();
+  startingTest();
 }
 
 // function to start test
